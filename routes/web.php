@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |{
 */
-
+Route::group(['middleware'=>'set.locale'], function () {
 Route::get('/',function (){
   return view('welcome');
 });
@@ -153,11 +153,17 @@ Route::get('kensakuDB','App\Http\Controllers\KekkaController@kensakuDB');
 
 Route::get('map','App\Http\Controllers\MapController@index');
 
+//試し
+Route::get('en','App\Http\Controllers\KensakuController@syukuhakuen');
+
 Route::get('kekka_s', 'App\Http\Controllers\KekkaController@kekka_s');
+Route::get('kekka_ss', 'App\Http\Controllers\KekkaController@kekka_ss');
 Route::get('/kekka_s/keyword','App\Http\Controllers\KekkaController@kekka_skeyword')->middleware('keyword');
 Route::get('kekka_i', 'App\Http\Controllers\KekkaController@kekka_i');
+Route::get('kekka_ii', 'App\Http\Controllers\KekkaController@kekka_ii');
 Route::get('/kekka_i/keyword','App\Http\Controllers\KekkaController@kekka_ikeyword')->middleware('keyword');
 Route::get('kekka_k', 'App\Http\Controllers\KekkaController@kekka_k');
+Route::get('kekka_kk', 'App\Http\Controllers\KekkaController@kekka_kk');
 Route::get('/kekka_k/keyword','App\Http\Controllers\KekkaController@kekka_kkeyword')->middleware('keyword');
 
 
@@ -165,3 +171,22 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/login/admin', 'App\Http\Controllers\Auth\LoginController@showAdminLoginForm');
+Route::get('/register/admin', 'App\Http\Controllers\Auth\RegisterController@showAdminRegisterForm');
+
+Route::post('/login/admin', 'App\Http\Controllers\Auth\LoginController@adminLogin');
+Route::post('/register/admin', 'App\Http\Controllers\Auth\RegisterController@createAdmin')->name('admin-register');
+
+Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
+
+
+Route::get('chat', 'App\Http\Controllers\PostsController@index')->name('top');
+Route::resource('posts', 'App\Http\Controllers\PostsController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
+Route::resource('comments', 'App\Http\Controllers\CommentsController', ['only' => ['store']]);
+
+
+Route::get('/setlocale/{locale}', function($locale) {
+  session()->put('locale', $locale);
+  return redirect()->back();
+})->name('locale');
+});

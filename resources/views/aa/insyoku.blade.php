@@ -1,5 +1,10 @@
 @extends('layouts.insyokuapp')
-
+<hr size="1">
+  <h3><input type="submit" value="English" onclick="location.href='./setlocale/en'" 
+    style= "width:200px;height:50px;font-size:20;"></input>
+   <input type="submit" value="日本語" onclick="location.href='./setlocale/ja'" 
+    style= "width:200px;height:50px;font-size:20;"></input></h3>
+  
 <link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
 <style>
   .pagination { font-size:15pt; margin:0 0 0 550px;}
@@ -8,7 +13,7 @@
 
 <div class="title0" font-size="20px">
   <div class="title" font-size="20px">
-    飲食
+    {{__('messages.insyoku_title')}}
   </div>
 </div>
 
@@ -23,7 +28,7 @@
 @section('content2')
 <form action="/insyoku/keyword" method="GET">
 @csrf
-<input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="🔍施設名・食品名等を入力(スペース区切りで複数条件検索可)">
+<input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="{{__('messages.serch_form')}}">
 <input  class="btn-square-slant" type="submit" value="検索"></input>
 </form>
 @endsection
@@ -39,7 +44,7 @@
   <hr size="1">
 
   
-  <h3><input type="submit" value="北海道" onclick="location.href='./insyokuarea'" 
+  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./insyokuarea'" 
     style= "width:200px;height:50px;font-size:20;"></input></h3>
   
 

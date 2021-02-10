@@ -370,6 +370,8 @@
       <span class="emessage2">{{$message}}</span>
     @enderror
 
+    
+
     <textarea type="text" name="store_information" placeholder="店情報">{{old('store_information')}}</textarea><br>
 
     {{--住所--}}

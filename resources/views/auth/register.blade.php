@@ -5,11 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('新規登録') }}</div>
+                <div class="card-header">{{ isset($authgroup) ? ucwords($authgroup) : ""}}{{ __('新規登録') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                @isset($authgroup)
+                    <form method="POST" action="{{ route('register/$authgroup') }}">
+                @else
+                <form method="POST" action="{{ route('register') }}">
+                @endisset
                         @csrf
+
 
                         <div class="form-group row">
                             <label for="user_id" class="col-md-4 col-form-label text-md-right">{{ __('ユーザーid') }}</label>

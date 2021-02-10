@@ -58,31 +58,60 @@ class KekkaController extends Controller
 
     public function kekka_s(Request $request)
     {
-        $items = DB::table('information')->where('area', $request->area)->orderBy('store_name', 'asc')->get();
+        $items = DB::table('information')->where('area', '札幌')->orderBy('store_name', 'asc')->get();
        $keyword = '';
        $num = $items->where('flag', 1)->where('store_stype', '宿泊')->count();
        $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
        return view('kensaku.kekka_s', $param);
     }
 
+    public function kekka_ss(Request $request)
+   {
+       //$sort = $request->sort;
+       $items = DB::table('information')->where('area','札幌')->orderBy('store_name', 'desc')->get();
+       $keyword = '';
+       $num = $items->where('flag', 1)->where('store_stype', '宿泊')->count();
+       $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
+       return view('kensaku.kekka_ss', $param);
+   }
+
    public function kekka_i(Request $request)
    {
        //$sort = $request->sort;
-       $items = DB::table('information')->where('area', $request->area)->orderBy('store_name', 'asc')->get();
+       $items = DB::table('information')->where('area','札幌')->orderBy('store_name', 'asc')->get();
        $keyword = '';
        $num = $items->where('flag', 1)->where('store_stype', '飲食店')->count();
        $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
        return view('kensaku.kekka_i', $param);
    }
 
+   public function kekka_ii(Request $request)
+   {
+       //$sort = $request->sort;
+       $items = DB::table('information')->where('area','札幌')->orderBy('store_name', 'desc')->get();
+       $keyword = '';
+       $num = $items->where('flag', 1)->where('store_stype', '飲食店')->count();
+       $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
+       return view('kensaku.kekka_ii', $param);
+   }
+
    public function kekka_k(Request $request)
    {
-    $items = DB::table('information')->where('area', $request->area)->orderBy('store_name', 'asc')->get();
+    $items = DB::table('information')->where('area', '札幌')->orderBy('store_name', 'asc')->get();
        $keyword = '';
-       $num = $items->where('flag', 1)->where('store_stype', '観光')->count();
+       $num = $items->where('flag', 1)->where('store_stype', '観光地')->count();
        $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
        return view('kensaku.kekka_k', $param);
 }
+public function kekka_kk(Request $request)
+   {
+       //$sort = $request->sort;
+       $items = DB::table('information')->where('area','札幌')->orderBy('store_name', 'desc')->get();
+       $keyword = '';
+       $num = $items->where('flag', 1)->where('store_stype', '観光地')->count();
+       $param = ['items' => $items, 'keyword' => $keyword, 'num' => $num];
+       return view('kensaku.kekka_kk', $param);
+   }
 
 public function kekka_ikeyword(Request $request)
     {
@@ -178,7 +207,7 @@ public function kekka_ikeyword(Request $request)
  
         $items = $query->orderBy('store_name', 'asc')->get();
 
-        $num = $items->where('flag', 1)->where('store_stype', '観光')->count();
+        $num = $items->where('flag', 1)->where('store_stype', '観光地')->count();
  
         return view('kensaku.kekka_k', compact('items', 'keyword', 'num'));
     }

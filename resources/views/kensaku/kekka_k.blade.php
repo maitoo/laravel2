@@ -23,6 +23,7 @@
 </p>
 @endsection
 @section('content3')
+
 <link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
 <div class="saikensaku">
 <form action="/kekka_k/keyword" method="GET">
@@ -36,13 +37,18 @@
 
 @endsection
 @section('content')
+<select name="select" onChange="location.href=value;">
+<option value="#">並び替え</option>
+<option value="/kekka_kk?sort=store_name">name</option>
+</select>
+@if ($num > 0)
 @foreach ($items as $item)
-@if (!empty($item->flag) and $item->store_stype == "宿泊")
+@if (!empty($item->flag) and $item->store_stype == "観光地")
     <table border="2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
     @csrf
     <tr>
-        <td rowspan="10" style="border-right-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="500" height="400" align="center"></td>
+        <td rowspan="10" style="border-right-style: hidden;"><img src="{{ $item->photo_pass}}" width="500" height="400" align="center"></td>
         </tr>
         <tr>
           <td  height="100px;" 
@@ -76,7 +82,7 @@
     </table>
     @endif
     @endforeach
-@else
+    @else
   <p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
 @endif
 @endsection

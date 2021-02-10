@@ -34,16 +34,28 @@
 <div class="sen"><hr size="1"></div>
 <div class="balloon3">札幌</div>
 
+<div class=pagi>
+        {{--  $items->appends(request()->input())->links() --}}
+</div>
+
 @endsection
+
 @section('content')
+
+<select name="select" onChange="location.href=value;">
+<option value="#">並び替え</option>
+<option value="/kekka_ss?sort=store_name">name</option>
+</select>
+
+@if ($num > 0)
 @foreach ($items as $item)
 @if (!empty($item->flag) and $item->store_stype == "宿泊")
     <table border="2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
     @csrf
         <tr>
-          <td rowspan="10" style="-right-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="500" height="400" align="center"></td>
-        </tr>border
+          <td rowspan="10" style="-right-style: hidden;"><img src="{{ $item->photo_pass}}" width="500" height="400" align="center"></td>
+        </tr>
         <tr>
           <td  height="100px;" 
           style="border-top-color: black; color:red; font-size: 100px;" align="left" >
@@ -70,13 +82,10 @@
         <tr>
           <td class="info2" height="90px;" style="border-bottom-color: black;border-top-style: hidden;" align="left">{{ $item->store_introduction}}</td>
         </tr>
-        <div class=pagi>
-        {{--  $items->appends(request()->input())->links() --}}
-        </div>
     </table>
     @endif
     @endforeach
-@else
+ @else
   <p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
 @endif
 @endsection

@@ -1,46 +1,54 @@
-@extends('layouts.syukuhakuapp')
+@extends('layouts.kekka_iapp')
 
 <link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
 <style>
   .pagination { font-size:15pt; margin:0 0 0 550px;}
   .pagination li { display:inline-block }
 </style>
-
 <div class="title0" font-size="20px">
   <div class="title" font-size="20px">
-    宿泊
+    飲食
   </div>
 </div>
 
-@section('content1')
 
-  <hr size="1">
-  <p>店名・キーワードから検索</p>
-  <hr size="1">
-  </form>
-@endsection
 @section('content2')
-<form action="/syukuhaku/keyword" method="get">
-@csrf
-<input required type="text"  style= "width:900px;height:50px"; name="keyword" placeholder="🔍施設名等を入力(スペース区切りで複数条件検索可)" value="{{$keyword}}">
-<input  class="btn-square-slant" type="submit" value="検索"></imput>
+<div class="sen"><hr size="1"></div>
+<p id="srchBrdCrmbs">
+  <a href="http://localhost:8000/syukuhaku">北海道</a>
+  &nbsp;>
+  <span class="grpLocationLocus">
+    <a href="http://localhost:8000/syukuhakuarea">札幌</a>
+  </span>
+  &nbsp;>&nbsp; 飲食結果    
+</p>
+@endsection
+@section('content3')
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
+<div class="saikensaku">
+<form action="/insyoku/keyword" method="GET">
+    @csrf
+    <input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="       🔍検索(スペース区切りで複数条件検索可)" value="{{$keyword}}">
+    <input class="btn-square-slant" type="submit" value="検索">
 </form>
+</div>
 
-@if (!null == $keyword)
-        <p style="color: black; margin: -10px -1200px 0 -10px; font-size: 25px;">検索結果は<span style="color: green;">{{$num . "件"}}</span>です</p>
-@endif
-
+<div class="sen"><hr size="1"></div>
 <div class="balloon3">札幌</div>
 
+{{--  $items->appends(request()->input())->links() --}}
+
+@endsection
+
+@section('content')
 @if ($num > 0)
-    @foreach ($items as $item)
-    @if (!empty($item->flag) and $item->store_stype == "宿泊")
+@foreach ($items as $item)
+@if (!empty($item->flag) and $item->store_stype == "飲食店")
     <table border="2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
     @csrf
     <tr>
-        <td rowspan="10" style="border-right-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="500" height="400" align="center"></td>
-        </tr>
+        <td rowspan="10" style="border-right-style: hidden;"><img src="{{ asset($item->photo_pass)}}" width="500" height="400" align="center"></td></tr>
         <tr>
           <td  height="100px;" 
           style="border-top-color: black; color:red; font-size: 100px;" align="left" >
@@ -67,13 +75,14 @@
         <tr>
           <td class="info2" height="90px;" style="border-bottom-color: black;border-top-style: hidden;" align="left">{{ $item->store_introduction}}</td>
         </tr>
-       
+        <div class=pagi>
+          
+        </div>
     </table>
     @endif
     @endforeach
-
 @else
-<p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
+  <p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
 @endif
 @endsection
 
@@ -106,8 +115,8 @@
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <div class="menyu1">
   <div class="menyu2">
-	  <a class="active" href="../syukuhaku">SYUKUHAKU 🏨</a>
-	  <a href="../insyoku">INSYOKU 🍜</a>
+	  <a href="../syukuhaku">SYUKUHAKU 🏨</a>
+	  <a class="active" href="../insyoku">INSYOKU 🍜</a>
 	  <a href="../kankou">KANKOU 🗼</a>
 	  <a href="../Free">FREE (`･ω･´)b</a>
   </div>

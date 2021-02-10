@@ -10,10 +10,15 @@ use App\Models\Information;
 
 class KensakuController extends Controller
 {
+    public function syukuhakuen(Request $request)
+   {
+       return view('syukuhaku.syukuhakuen');
+   }
   
    public function kankou(Request $request)
    {
-       return view('aa.kankou');
+       $items = '';
+       return view('aa.kankou',['items' => $items]);
    }
 
    public function kankouarea(Request $request)
@@ -34,7 +39,8 @@ class KensakuController extends Controller
 
    public function syukuhaku(Request $request)
    {
-       return view('aa.syukuhaku');
+       $items = '';
+       return view('aa.syukuhaku',['items' => $items]);
    }
 
    public function syukuhakuarea(Request $request)

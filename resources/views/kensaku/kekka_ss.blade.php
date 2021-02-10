@@ -1,5 +1,4 @@
-@extends('layouts.syukuhakuapp')
-
+@extends('layouts.kekka_sapp')
 <link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
 <style>
   .pagination { font-size:15pt; margin:0 0 0 550px;}
@@ -12,34 +11,45 @@
   </div>
 </div>
 
-@section('content1')
-
-  <hr size="1">
-  <p>店名・キーワードから検索</p>
-  <hr size="1">
-  </form>
-@endsection
 @section('content2')
-<form action="/syukuhaku/keyword" method="get">
-@csrf
-<input required type="text"  style= "width:900px;height:50px"; name="keyword" placeholder="🔍施設名等を入力(スペース区切りで複数条件検索可)" value="{{$keyword}}">
-<input  class="btn-square-slant" type="submit" value="検索"></imput>
+<div class="sen"><hr size="1"></div>
+<p id="srchBrdCrmbs">
+  <a href="/syukuhaku">北海道</a>
+  &nbsp;>
+  <span class="grpLocationLocus">
+    <a href="/syukuhakuarea">札幌</a>
+  </span>
+  &nbsp;>&nbsp; 宿泊結果    
+</p>
+@endsection
+@section('content3')
+<link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
+<div class="saikensaku">
+<form action="/kekka_s/keyword" method="GET">
+    @csrf
+    <input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="       🔍検索(スペース区切りで複数条件検索可)" value="{{$keyword}}">
+    <input class="btn-square-slant" type="submit" value="検索">
 </form>
-
-@if (!null == $keyword)
-        <p style="color: black; margin: -10px -1200px 0 -10px; font-size: 25px;">検索結果は<span style="color: green;">{{$num . "件"}}</span>です</p>
-@endif
-
+</div>
+<div class="sen"><hr size="1"></div>
 <div class="balloon3">札幌</div>
 
+<div class=pagi>
+        {{--  $items->appends(request()->input())->links() --}}
+</div>
+
+@endsection
+
+@section('content')
+
 @if ($num > 0)
-    @foreach ($items as $item)
-    @if (!empty($item->flag) and $item->store_stype == "宿泊")
+@foreach ($items as $item)
+@if (!empty($item->flag) and $item->store_stype == "宿泊")
     <table border="2">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
     @csrf
-    <tr>
-        <td rowspan="10" style="border-right-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="500" height="400" align="center"></td>
+        <tr>
+          <td rowspan="10" style="-right-style: hidden;"><img src="{{ $item->photo_pass}}" width="500" height="400" align="center"></td>
         </tr>
         <tr>
           <td  height="100px;" 
@@ -67,13 +77,11 @@
         <tr>
           <td class="info2" height="90px;" style="border-bottom-color: black;border-top-style: hidden;" align="left">{{ $item->store_introduction}}</td>
         </tr>
-       
     </table>
     @endif
     @endforeach
-
-@else
-<p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
+ @else
+  <p style="font-size: 50px;">検索結果は<span style="color: red;">0件<span style="color: black;">です</p>
 @endif
 @endsection
 
@@ -92,9 +100,9 @@
         <div class="menu">
           <a href="http://localhost:8000/"><i class="fas fa-microphone-alt">
           </i>言語を変更する</a>
-          <a href="http://localhost:8000/"><i class="fas fa-envelope">
+          <a href="http://localhost:8000/user_q"><i class="fas fa-envelope">
           </i>Q&A</a>
-          <a href="http://localhost:8000/"><i class="fas fa-phone">
+          <a href="http://localhost:8000/form"><i class="fas fa-phone">
           </i>お問い合わせ</a>
         </div>
       </div>
@@ -106,9 +114,9 @@
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <div class="menyu1">
   <div class="menyu2">
-	  <a class="active" href="../syukuhaku">SYUKUHAKU 🏨</a>
-	  <a href="../insyoku">INSYOKU 🍜</a>
-	  <a href="../kankou">KANKOU 🗼</a>
-	  <a href="../Free">FREE (`･ω･´)b</a>
+	  <a class="active" href="../syukuhaku">SYUKUHAKU 🏨</a></li>
+	  <a href="../insyoku">INSYOKU 🍜</a></li>
+	  <a href="../kankou">KANKOU 🗼</a></li>
+	  <a href="../Free">FREE (`･ω･´)b</a></li>
   </div>
 </div>

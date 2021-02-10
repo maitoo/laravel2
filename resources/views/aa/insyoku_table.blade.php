@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
     @csrf
     <tr>
-        <td rowspan="10" style="border-right-style: hidden;"><img src="{{ $item->photo_pass}}" width="500" height="400" align="center"></td>
+        <td rowspan="10" style="border-right-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="500" height="400" align="center"></td>
         </tr>
         <tr>
           <td  height="100px;" 

@@ -40,7 +40,14 @@
 
 @endsection
 
+
+
 @section('content')
+{{--並び替え--}}
+<select name="select" onChange="location.href=value;">
+<option value="#">並び替え</option>
+<option value="/kekka_ii?sort=store_name">name</option>
+</select>
 @if ($num > 0)
 @foreach ($items as $item)
 @if (!empty($item->flag) and $item->store_stype == "飲食店")
