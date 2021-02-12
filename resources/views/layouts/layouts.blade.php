@@ -12,15 +12,48 @@
     >
 </head>
 <body>
-    <header class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('') }}">
-                Laravel BBS
-            </a>
-        </div>
-    </header>
-
+<style>
+.mb-4{margin:190;}
+        .menyu1 {
+	list-style-type: none;
+	margin: -300,0,0,0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #1b2538;
+}
+.menyu2 {
+	float: left;
+	border-right: 1px solid #bbbbbb;
+  margin:0 0 0 220px;
+  font-family: 'Kaushan Script', cursive;
+}
+.menyu2 a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+  margin: 0 50px 0 60px;
+	padding: 20px 20px 20px 25px;
+	text-decoration: none;
+}
+.menyu2:last-child {
+	border-right: none;
+}
+.menyu2 a:hover:not(.active) {
+	background-color: #a9bce2;
+}
+.active {
+	background-color: #da3c41;
+  transition: background-color 2s linear;
+}
+.title0{text-align:center; font-family: 'Noto Serif JP', sans-serif;
+        }
+    .title{font-size:50pt; margin:-360}
+</style>
+    <div class="content4">
+        @yield('content4')
     <div>
+
+    <div class="content">
         @yield('content')
     </div>
 </body>

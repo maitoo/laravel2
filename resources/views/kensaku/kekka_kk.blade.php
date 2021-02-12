@@ -115,6 +115,6 @@
 	  <a href="../syukuhaku">SYUKUHAKU 🏨</a></li>
 	  <a href="../insyoku">INSYOKU 🍜</a></li>
 	  <a class="active" href="../kankou">KANKOU 🗼</a></li>
-	  <a href="../Free">FREE (`･ω･´)b</a></li>
+	  <a href="../chat">COMMUNITY (`･ω･´)b</a></li>
   </div>
 </div>

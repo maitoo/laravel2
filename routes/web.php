@@ -184,6 +184,10 @@ Route::get('chat', 'App\Http\Controllers\PostsController@index')->name('top');
 Route::resource('posts', 'App\Http\Controllers\PostsController', ['only' => ['create', 'store', 'show', 'edit', 'update', 'destroy']]);
 Route::resource('comments', 'App\Http\Controllers\CommentsController', ['only' => ['store']]);
 
+Route::get('/customer','App\Http\Controllers\CustomerController@index');
+Route::get('/customer/edit','App\Http\Controllers\CustomerController@edit');
+Route::post('/customer/edit','App\Http\Controllers\CustomerController@update');
+Route::get('/customer/keyword','App\Http\Controllers\CustomerController@keyword')->middleware('keyword');
 
 Route::get('/setlocale/{locale}', function($locale) {
   session()->put('locale', $locale);

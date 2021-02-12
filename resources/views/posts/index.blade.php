@@ -1,5 +1,22 @@
 @extends('layouts.layouts')
 
+@section('content4')
+<div class="title0" font-size="20px">
+  <div class="title" font-size="20px">
+    コミュニティ
+  </div>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+<div class="menyu1">
+  <div class="menyu2">
+	  <a href="../syukuhaku">SYUKUHAKU 🏨</a>
+	  <a href="../insyoku">INSYOKU 🍜</a>
+	  <a href="../kankou">KANKOU 🗼</a>
+	  <a class="active" href="../chat">COMMUNITY (`･ω･´)b</a>
+  </div>
+</div>
+@endsection
+
 @section('content')
     <div class="container mt-4">
     <div class="mb-4">
@@ -37,4 +54,3 @@
     <div class="d-flex justify-content-center mb-5">
     {{ $posts->links() }}
 </div>
-@endsection

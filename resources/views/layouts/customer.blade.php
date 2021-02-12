@@ -6,20 +6,19 @@
 
     
     <style>
-
     body {font-size:16pt; color:black; margin: 0px; }
     h1 { font-size:60pt; text-align:center; color:white;
     margin:-70px 0px 30px 0px; letter-spacing:-4pt; font-family: 'Londrina Shadow', cursive;}
+
     h2 {font-size:30pt; text-align:center; color:white;
     margin:-40px 0px 30px 0px; letter-spacing:-4pt;}
-    ul { font-size:12pt; }
-    hr { margin: 25px 100px; border-top: 1px dashed #ddd; }
-    .menutitle {font-size:14pt; font-weight:bold; margin: 0px; }
+    
     .content {margin:50px; text-align:center;}
-    .footer { text-align:right; font-size:10pt; margin:10px;
-    border-bottom:solid 1px #ccc; color:#ccc; }
+    
     tr {margin:20px 0px -30px 0px;}
+
     th {background-color:#3498db; color:#fff; padding:5px 10px; padding-color:black;}
+
     td {border: solid 1px #aaa; color:black; padding:5px 10px; font-size:13pt;
         background-color: white;
     -webkit-transition: all 0.3s ease;
@@ -27,40 +26,12 @@
     -o-transition: all 0.3s ease;
     transition: all  0.3s ease;
     }
+
     table {border-collapse: collapse; width:1390px; text-align:center; margin:10px 8px 10px; table-layout: fixed;}
+
     table th, table td {border: solid 1px black;}
-    .box1 {padding: 0.5em 0.5em ;margin: 0px 0px; width: auto;  border: solid 3px #000000; }
-    .box1 p {margin: 0px 5px 0px -5px; padding: 0; width: auto 10;}
     
-    .button_wrapper remodal-bg{font-size: 1.4em;
-font-weight: bold;
-padding: 10px 30px;
-color: #fff;
-border-style: none;
-box-shadow: 2px 2px 3px 1px #666;
--moz-box-shadow: 2px 2px 3px 1px #666;
--webkit-box-shadow: 2px 2px 3px 1px #666;
-text-shadow: 1px 1px 2px #000;
-background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
-background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
--moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-.button_wrapper remodal-bg:hover{
-    opacity: 0.8;
-    background-color:blue;
-}
-.disp-img{
-    background-image:url(../image/Go-back_3672.png);             
-    background-repeat:  no-repeat;                              
-    width:auto;                                   
-    height:65pX;
-    align:left;
-    object-fit: cover;
-    margin: 10px 45px;                                  
-}
-.disp-img2{
+    .disp-img2{
     background-image:url(../image/Go-back_3672.png);             
     background-repeat:  no-repeat;                              
     width:65px;                                   
@@ -70,22 +41,12 @@ background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-st
     margin: 10px 45px; 
     background-color: transparent;
     border-color: transparent;                                
-}
-.disp-img2:hover {
-    backdrop-filter: blur(12px);
-}
-    .buttom {background-image:url(../image/Go-back_3672.png);             
-    background-repeat:  no-repeat; 
-    width:auto;                                   
-    height:65pX;
-    align:left;
-    object-fit: cover;
-    margin: 0 45px;   }
-    a {align: right;}
-    p {margin: 10px;}
-    .submit {text-align: right; margin:-60px 90px;}
-    .a {width: 300px;}
-    .text {width: 1000px; align:left;}
+    }
+
+    .disp-img2:hover {
+        backdrop-filter: blur(12px);
+    }
+    
     h1 {
     color: #fff;
     font-family: 'Oswald', sans-serif;
@@ -152,31 +113,38 @@ background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-st
     @media (min-width: 60em) {
     h1 { font-size: 100px; }
     }
-    input.kaitou {
-        width: 90%;
-        align: center;
+    
+    html,body {
+    background-image:url(../image/tree.jpg);
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     }
 
-    html,
-body {
-  background-image:url(../image/tree.jpg);
-  background-color: #85b9;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-.ab{font-size:20pt; font-weight:bold;
-      height: 20px; padding: 0 0 0 30px;} 
-.abc{text-align:right}
+    .search {background: silver; color: black; border-color: silver; height: 50px;}
 
+    .search:hover {opacity: 0.8;}
+
+    .country {margin: 10px 20px; border: 1px solid black;
+      letter-spacing: 2px;}
+
+    .country {position:relative;
+	  border-radius: 7px;
+	  background: #ffffff;
+    }
+
+    .country option:nth-child(2n) {
+      background: lightgrey;
+    }
 </style>
 
 </div>
 <body>
     <h1 aria-label="CodePen">
-    <span data-text="登">登</span>
-    <span data-text="録">録</span>
+    <span data-text="顧">顧</span>
+    <span data-text="客">客</span>
     <span data-text="情">情</span>
     <span data-text="報">報</span>
     </h1>
