@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Information;
+use App\Models\User;
 use Illuminate\Http\Request;
 use config\pref;
 use App\Http\Requests\InformationRequest;
