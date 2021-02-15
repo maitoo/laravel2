@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Question;
 use App\Models\Information;
-use App\Models\user;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 
 class CustomerController extends Controller
 {

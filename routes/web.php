@@ -44,9 +44,6 @@ Route::post('/company3', 'App\Http\Controllers\CompanyController3@post');
 Route::get('/company4', 'App\Http\Controllers\HelloController3@index');
 Route::post('/company4', 'App\Http\Controllers\HelloController3@post');
 
-Route::get('/', 'App\Http\Controllers\CompanyController4@index');
-Route::post('/', 'App\Http\Controllers\CompanyController4@post');
-
 Route::get('/company6', 'App\Http\Controllers\QuestionController@index');
 Route::post('/company6', 'App\Http\Controllers\QuestionController@post');
 
