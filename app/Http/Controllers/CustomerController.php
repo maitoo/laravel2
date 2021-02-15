@@ -13,12 +13,6 @@ use App\Models\User;
 
 class CustomerController extends Controller
 {
-    /*public function index(Request $request)
-    {
-        $items = Customer::all();
-        return view('customer.index', ['items' => $items]);
-    }*/
-
     public function role(Request $request)
     {
         $key = Auth::user()->role;

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->longtext('password');
             $table->string('language_code',30);
             $table->string('country_code',30);
-            $table->string('flag', 3)->default("一般");
+            $table->string('role', 3)->default("一般");
             $table->rememberToken();
             $table->timestamps();
         });
