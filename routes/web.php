@@ -168,6 +168,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::get('/homepage','App\Http\Controllers\CustomerController@role');
+
 Route::get('/login/admin', 'App\Http\Controllers\Auth\LoginController@showAdminLoginForm');
 Route::get('/register/admin', 'App\Http\Controllers\Auth\RegisterController@showAdminRegisterForm');
 

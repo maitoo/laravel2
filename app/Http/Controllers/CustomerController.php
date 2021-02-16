@@ -13,13 +13,14 @@ use App\Models\User;
 
 class CustomerController extends Controller
 {
+   
     public function role(Request $request)
     {
         $key = Auth::user()->role;
         if (Auth::check()) {
             if ($key == "管理者") {
                 $items = Question::all();
-                return view('question.index', ['items' => $items]);
+                return view('kanrisya.index', ['items' => $items]);
             } elseif ($key == "企業") {
                 $user_id = Auth::user()->user_id;
                 //$items = Information::where('user_id', $user_id);
@@ -28,7 +29,7 @@ class CustomerController extends Controller
                 $keyword = "";
                 return view('company.index', compact('user_id', 'items', 'keyword', 'num'));
             } else {
-                return view('user.home2');
+                return view('aa.syukuhaku');
             }
         } else {
             // ログインしていなかったら、Login画面を表示

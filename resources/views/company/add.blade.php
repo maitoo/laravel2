@@ -18,7 +18,7 @@
     @csrf
 
     {{--id--}}
-    <input type="text" name="user_id"><br>
+    <input type="hidden" name="user_id" value="{{$user_id}}">
 
     {{--店名--}}
     <span class="aa">必須</span><span>店名</span>
