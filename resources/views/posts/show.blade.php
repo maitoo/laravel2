@@ -10,7 +10,7 @@
     @csrf
     @method('DELETE')
 
-    <button class="btn btn-danger">削除する</button>
+    <button class="btn1"><span style="cursor: hand; cursor:pointer;">削除する</span></button>
 </form>
         <div class="mb-4 text-right">
     <a class="btn btn-primary" href="{{ route('posts.edit', ['post' => $post]) }}">
