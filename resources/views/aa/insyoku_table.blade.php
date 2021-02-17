@@ -78,12 +78,13 @@
       <div class="content">
         <h2><i class="fas fa-list-ul"></i>メニュー</h2>
         <div class="menu">
-          <a href="http://localhost:8000/"><i class="fas fa-microphone-alt">
-          </i>言語を変更する</a>
           <a href="http://localhost:8000/"><i class="fas fa-envelope">
           </i>Q&A</a>
           <a href="http://localhost:8000/"><i class="fas fa-phone">
           </i>お問い合わせ</a>
+          <a href="setlocale/ja">日本語
+          <a href="setlocale/en">英語
+          <a href="setlocale/zh">中国語
         </div>
       </div>
     </div>

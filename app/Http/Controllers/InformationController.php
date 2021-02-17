@@ -143,13 +143,13 @@ class InformationController extends Controller
         return view('com.edit', ['form' => $item]);
     }
     //企業登録情報更新
-    public function update2(InformationRequest $request)
+    public function update2(Request $request)
     {
         $information = Information::find($request->serial_number);
         $form = $request->all();
         unset($form['_token']);
         $information->fill($form)->save();
-        return redirect('homepage');
+        return redirect('information');
     }
 
     //詳細画面へ

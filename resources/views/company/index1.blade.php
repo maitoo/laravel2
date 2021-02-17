@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <form action="/com/keyword" method="GET">
+    <form action="/company/keyword" method="GET">
     @csrf
     <input type="text" style= "width:900px;height:50px"; name="keyword" placeholder="       🔍id・メールアドレス等を入力(スペース区切りで複数条件検索可)" value="{{$keyword}}">
     <tr><td><input class="search" type="submit" value="検索"></td></tr><br>
@@ -33,7 +33,7 @@
         </tr>
 
         <tr>
-          <td rowspan="10" style="border-top-style: hidden;"><img src="{{asset( $item->photo_pass)}}" width="60" height="50" align="center"></td>
+          <td rowspan="10" style="border-top-style: hidden;"><img src="{{ asset($item->photo_pass)}}" width="60" height="50" align="center"></td>
 
           <td 
           style="border-top-color: black; color:black; font-size: 20px; width: 100px; border-top-style: hidden;" align="center" >
