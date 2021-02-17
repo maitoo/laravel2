@@ -9,14 +9,14 @@
     .title0{text-align:center; font-family: 'Noto Serif JP', sans-serif;}
     .title{font-size:50pt;}
     .content1{align:center; margin:30px 0 0 65px;}
-    .content2{margin:0px 100px -20px 130px; font-size:20px;}
+    .content2{margin:-20px 100px -20px 150px; font-size:20px;}
     .content3{align:center; margin:50px 100px 0 130px;}
     .content4{align:center; margin:0 0 0 0;}
-    .saikensaku {margin: -10px 0 0 0;}
+    .saikensaku {margin: 0 0 -40px 165px;}
     .sen{margin: 0 -130px;}
     .balloon3 { position: relative;
   display: inline-block;
-  margin: 15px 0 -60px 0;
+  margin: 15px 0 -30px 50px;
   padding: 0 5px;
   width: 175px;
   height: 175px;
@@ -123,7 +123,6 @@
     object-fit: cover;
     margin: 0 45px;   }
     a {align: right;}
-    p {margin: 10px;}
     .submit {text-align: right; margin:-60px 90px;}
     .a {width: 300px;}
     .text {width: 1000px; align:left;}
@@ -236,21 +235,19 @@ padding: 4px 0; cursor: pointer; text-align: center; top: 0; right: 0; }
       .name {color:red; ;}
       
       tr {margin:0 0 0 0;}
-    th { color:#fff;  }
-    td {border: solid 1px #aaa; color:black; padding:5px 10px; font-size:13pt;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all  0.3s ease;
+    
+    .table2{
+      height:700px;
     }
     
-    table {border-collapse: collapse; width:1390px; text-align:center; margin:10px 8px 10px; table-layout: fixed;  background: linear-gradient(#FFFFCC, #FFFFFF ) fixed; font-family: 'Sawarabi Mincho', sans-serif;}
+    table { width:1100px; height:500px; text-align:center; margin:auto; table-layout: fixed;  background: linear-gradient(#FFFFCC, #FFFFFF ) fixed; font-family: 'Sawarabi Mincho', sans-serif;}
 
-    table td table th{border: solid 1px black; padding:10px 10px 10px 0;}
+    .gazou{margin:-20px 0 0 0; }
+    
     .touroku{margin:-50px 0 0 100px; padding: 15px 30px; width:100px;
       height:50px; font-weight: bold; font-size:10pt;}
 
-    .pagi{margin:0 50px 30px 0px;}
+    
 
     .name1_1{margin:0 0 0 0;}
     .menyu1 {
@@ -333,6 +330,12 @@ padding: 4px 0; cursor: pointer; text-align: center; top: 0; right: 0; }
 .btn-square-slant:active:after, .btn-square-slant:active:before {
   content: none;/*ボタンを押すと線が消える*/
 }
+
+.ks{margin:-100px 0 0 0;}
+.ks2{margin:-80px 0 0 0;}
+.ks3{margin:-60px 0 0 0;}
+.ks4{margin:-50px 0 0 0;}
+.tenpo{font-size:20px; color:red;}
 
 }
 </style>

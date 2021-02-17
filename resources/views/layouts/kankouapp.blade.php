@@ -1,9 +1,11 @@
 <html>
   <head>
-  <title>@yield('title')</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
     <style>
     /*タイトル*/
+
+    
     .title0{text-align:center; font-family: 'Noto Serif JP', sans-serif;}
     .title{font-size:50pt;}
     body{ background:radial-gradient(#FFFFFF, #CBFFD3); }
@@ -41,10 +43,9 @@
         object-fit: cover; margin: 10px 45px; background-color: transparent;
         border-color: transparent;}
       .disp-img4{background-image:url(../image/unnamed.png);
-        background-repeat: no-repeat;width:200px; height:150px; align:center;
+        background-repeat: no-repeat; width:200px; height:150px; align:center;
         object-fit: cover; margin: 10px 45px; background-color: transparent;
         border-color: transparent;}
-
       .disp-img5{background-image:url(../image/kensaku.png);
         background-repeat: no-repeat; width:65px; height:65px; align:center;
         object-fit: cover; margin: 10px 45px; background-color: transparent;
@@ -57,12 +58,9 @@
         background-repeat: no-repeat; width:65px; height:65px; align:center;
         object-fit: cover; margin: 10px 45px; background-color: transparent;
         border-color: transparent;}
-
       .migi{margin:0 0 0 950px;}
       .button{position:relative;}
-      .button2{position:absolute;margin:0 0 0 160px;}
-      .touroku{margin:-50px 0 0 100px; padding: 15px 30px; width:100px;
-      height:50px; font-weight: bold; font-size:10pt;}
+      .button2{position:absolute; margin:0 0 0 160px;}
 
       /*風船見出し*/
       .balloon3 { position: relative;
@@ -76,7 +74,7 @@
   color: #FFF;
   font-size: 40px;
   font-weight: bold;
-  background: #00FF3B;
+  background: #70a6ff;
   border-radius: 50%;
   box-sizing: border-box;
       font-family: 'Noto Serif JP', sans-serif;}
@@ -88,11 +86,15 @@
   left: 50%;
   margin-left: -15px;
   border: 15px solid transparent;
-  border-top: 15px solid #00FF3B;
+  border-top: 15px solid #70a6ff;
   z-index: 0;
 }
 
       
+      table {border-collapse: collapse; width:1300px; text-align:center; margin:80px 8px 10px -20px; table-layout: fixed;  background: linear-gradient(#FFFFCC, #FFFFFF ) fixed; font-family: 'Sawarabi Mincho', sans-serif;}
+
+      table td table th{border: solid 1px black; padding:10px 10px 10px 0;}
+
       .menu-drawer .btn {font-size: 27px; background: #fff; width: 40px;padding: 4px 0; cursor: pointer; text-align: center; top: 0; right: 0;}
       .menu-drawer .btn::before, .menu-drawer .btn::after {font-family: "Font Awesome 5 Free"; font-weight: 900;}
       .menu-drawer .btn::before {content: "\f0c9";}
@@ -126,8 +128,8 @@
       .menu-drawer #chk ~ .content {transform: translate(350%, 0); transition: transform 0.3s ease-in-out;}
       .menu-drawer #chk:checked ~ .content {transform: none;}
 
-           /*メニューバー*/
-           .menyu1 {
+      /*メニューバー*/
+      .menyu1 {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -207,22 +209,27 @@
 .btn-square-slant:active:after, .btn-square-slant:active:before {
   content: none;/*ボタンを押すと線が消える*/
 }
+
+.ks{margin:-100px 0 0 0;}
+.ks2{margin:-80px 0 0 0;}
+.ks3{margin:-60px 0 0 0;}
+.ks4{margin:-50px 0 0 0;}
+.tenpo{font-size:20px; color:red;}
+
     </style>
   </head>
 <body>
-  <h2>@yield('h2')</h2>
+  <h1>@yield('title')</h1>
   <div class="content1">
     @yield('content1')</div>
   <div class="content2">
     @yield('content2')</div>
   <div class="content3" >
     @yield('content3')</div>
-  <div class="content4" >
+  <div class="content4">
     @yield('content4')</div>
   <div class="content5">
     @yield('content5')</div>
-
 </form>
-</div>
 </body>
 </html>

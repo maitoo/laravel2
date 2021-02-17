@@ -20,6 +20,6 @@ class KanrisyaInformationController extends Controller
          $items = Information::simplePaginate(9);
          $keyword = "";
          $flag = "";
-         return view('kanrisya.indexDB', ['items' => $items, 'keyword' => $keyword, 'num' => $num,'flag' => $flag]);
+         return view('information.index', ['items' => $items, 'keyword' => $keyword, 'num' => $num,'flag' => $flag]);
      }
 }

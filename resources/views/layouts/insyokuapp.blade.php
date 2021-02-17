@@ -209,6 +209,13 @@
 .btn-square-slant:active:after, .btn-square-slant:active:before {
   content: none;/*ボタンを押すと線が消える*/
 }
+
+.ks{margin:-100px 0 0 0;}
+.ks2{margin:-80px 0 0 0;}
+.ks3{margin:-60px 0 0 0;}
+.ks4{margin:-50px 0 0 0;}
+.tenpo{font-size:20px; color:red;}
+
     </style>
   </head>
 <body>

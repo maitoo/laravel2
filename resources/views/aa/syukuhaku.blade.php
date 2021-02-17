@@ -38,6 +38,8 @@
 
     <h2>北海道地方</h2>
 
+    <hr size="1">
+
     <h3><input type="submit" value="北海道" onclick="location.href='./syukuhakuarea'" 
     style= "width:200px;height:50px;font-size:20;"></input></h3>
   
@@ -54,7 +56,7 @@
     <input type="submit" value="岩手県"
       style= "width:200px;height:50px;font-size:20;">
     <input type="submit" value="宮城県"
-      style= "width:200px;height:50px;font-size:20;"><br>
+      style= "width:200px;height:50px;font-size:20;">
     <input type="submit" value="秋田県"
       style= "width:200px;height:50px;font-size:20;">
     <input type="submit" value="山形県"

@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Storage;
 
 class InformationController extends Controller
 {
-    //登録情報表示画面へ
+    //企業登録情報表示画面へ
     public function index(Request $request)
     {
+        $user_id = Auth::user()->user_id;
         $items = Information::all();
-        $num = $items->count();
-        $items = Information::simplePaginate(9);
+        $num = $items->where('user_id',$user_id)->count();
         $keyword = "";
         $flag = "";
-        return view('information.index', ['items' => $items, 'keyword' => $keyword, 'num' => $num, 'flag' => $flag]);
+        return view('company.index1', ['items' => $items, 'keyword' => $keyword, 'num' => $num, 'flag' => $flag, 'user_id' => $user_id]);
     }
     //店情報登録画面へ
     public function add(Request $request)
@@ -135,5 +135,70 @@ class InformationController extends Controller
         $items = $query->simplePaginate(9);
  
         return view('information.index', compact('items', 'keyword', 'num', 'flag'));
+    }
+
+    public function edit2(Request $request)
+    {
+        $item = Information::find($request->serial_number);
+        return view('com.edit', ['form' => $item]);
+    }
+    //企業登録情報更新
+    public function update2(InformationRequest $request)
+    {
+        $information = Information::find($request->serial_number);
+        $form = $request->all();
+        unset($form['_token']);
+        $information->fill($form)->save();
+        return redirect('homepage');
+    }
+
+    //詳細画面へ
+    public function find2(Request $request)
+    {
+        $item = Information::find($request->serial_number);
+        return view('com.find', ['item' => $item]);
+    }
+
+    //キーワード検索
+    public function keyword2(Request $request)
+    {
+        $keywords = $request->input('keyword');
+
+        $user_id = Auth::user()->user_id;
+ 
+        $query = information::query();
+        
+        if (!empty($keywords)) {
+            foreach ($keywords as $keyword) {
+            $query->where('store_name', $keyword)
+                ->orWhere('user_id', $keyword)
+                ->orWhere('allergies', $keyword)
+                ->orWhere('store_stype', $keyword)
+                ->orWhere('rural_code', $keyword)
+                ->orWhere('area', $keyword)
+                ->orWhere('religion', $keyword)
+                ->orWhere('url', $keyword)
+                ->orWhere('street_address', $keyword)
+                ->orwhere('flag', $request->flag);
+            }
+        }
+
+        if (!empty($request->flag) || $request->flag == 0) {
+            $query->where('flag', $request->flag);
+        }
+
+        if (!empty($keywords)) {
+            $keyword = implode("    ", $keywords);
+            $flag = 1;
+        } else {
+            $keyword = "";
+            $flag = 1;
+        }
+ 
+        $items = $query->simplePaginate(9);
+
+        $num = $items->where('user_id', $user_id)->count();
+ 
+        return view('company.index', compact('items', 'keyword', 'num', 'flag', 'user_id'));
     }
 }

@@ -200,6 +200,17 @@ Route::get('/customer/edit','App\Http\Controllers\CustomerController@edit');
 Route::post('/customer/edit','App\Http\Controllers\CustomerController@update');
 Route::get('/customer/keyword','App\Http\Controllers\CustomerController@keyword')->middleware('keyword');
 
+Route::get('/company/edit','App\Http\Controllers\InformationController@edit2');
+Route::post('/company/edit','App\Http\Controllers\InformationController@update2');
+Route::get('/company/find','App\Http\Controllers\InformationController@find2');
+Route::get('/company/del','App\Http\Controllers\CompanyController@delete');
+Route::post('/company/del','App\Http\Controllers\CompanyController@remove');
+
+
+Route::get('/company/keyword','App\Http\Controllers\CompanyController@keyword')->middleware('keyword');
+
+Route::get('/information/keyword','App\Http\Controllers\InformationController@keyword')->middleware('keyword');
+
 Route::get('/setlocale/{locale}', function($locale) {
   session()->put('locale', $locale);
   return redirect()->back();

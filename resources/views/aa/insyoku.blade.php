@@ -1,10 +1,5 @@
 @extends('layouts.insyokuapp')
-<hr size="1">
-  <h3><input type="submit" value="English" onclick="location.href='./setlocale/en'" 
-    style= "width:200px;height:50px;font-size:20;"></input>
-   <input type="submit" value="日本語" onclick="location.href='./setlocale/ja'" 
-    style= "width:200px;height:50px;font-size:20;"></input></h3>
-  
+
 <link href='https://fonts.googleapis.com/css?family=Noto+Serif+JP' rel="stylesheet">
 <style>
   .pagination { font-size:15pt; margin:0 0 0 550px;}
@@ -13,14 +8,14 @@
 
 <div class="title0" font-size="20px">
   <div class="title" font-size="20px">
-    {{__('messages.insyoku_title')}}
+    飲食
   </div>
 </div>
 
 @section('content1')
 
   <hr size="1">
-  <p> {{__('messages.insyoku_serch')}}</p>
+  <p>店名・キーワードから検索</p>
   <hr size="1">
   </form>
 @endsection
@@ -28,170 +23,170 @@
 @section('content2')
 <form action="/insyoku/keyword" method="GET">
 @csrf
-<input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="{{__('messages.insyoku_serch_form')}}">
+<input required type="text" style= "width:900px;height:50px"; name="keyword" placeholder="🔍施設名・食品名等を入力(スペース区切りで複数条件検索可)">
 <input  class="btn-square-slant" type="submit" value="検索"></input>
 </form>
 @endsection
 
 @section('content3')
 <hr size="1">
-  <p>{{__('messages.serch_region')}}</p>
+  <p>地方エリアから探す</p>
 <hr size="1">
 <hr size="1">
 
-  <h2>{{__('messages.hokkaido_region')}}</h2>
+  <h2>北海道地方</h2>
 
   <hr size="1">
 
   
-  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./insyokuarea'" 
+  <h3><input type="submit" value="北海道" onclick="location.href='./insyokuarea'" 
     style= "width:200px;height:50px;font-size:20;"></input></h3>
   
 
   <hr size="1">
 
-  <h4>{{__('messages.hokkaido_region')}}</h4>
+  <h4>東北地方</h4>
 
   <hr size="1">
 
-  <h3><input type="submit" value="{{__('messages.aomori')}}" 
+  <h3><input type="submit" value="青森県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.iwate')}}"
+  <input type="submit" value="岩手県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.miyagi')}}"
+  <input type="submit" value="宮城県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.akita')}}"
+  <input type="submit" value="秋田県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.yamagata')}}"
+  <input type="submit" value="山形県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.hukusima')}}"
+  <input type="submit" value="福島県"
     style= "width:200px;height:50px;font-size:20;"></h3>
 
   <hr size="1">
 
-  <h5>{{__('messages.kanto_region')}}</h5>
+  <h5>関東地方</h5>
 
   <hr size="1">
   
-  <h3><input type="submit" value="{{__('messages.ibaraki')}}" 
+  <h3><input type="submit" value="茨城県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.tochigi')}}"
+  <input type="submit" value="栃木県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.gunnma')}}"
+  <input type="submit" value="群馬県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.saitama')}}"
+  <input type="submit" value="埼玉県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.chiba')}}"
+  <input type="submit" value="千葉県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.tokyo')}}"
+  <input type="submit" value="東京都"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.kanagawa')}}"
+  <input type="submit" value="神奈川県"
     style= "width:200px;height:50px;font-size:20;"></h3>
 
   <hr size="1">
 
-  <h6>{{__('messages.chubu_region')}}</h6>
+  <h6>中部地方</h6>
 
   <hr size="1">
 
-  <h3><input type="submit" value="{{__('messages.niigata')}}" 
+  <h3><input type="submit" value="新潟県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.toyama')}}"
+  <input type="submit" value="富山県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.ishikawa')}}"
+  <input type="submit" value="石川県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.hukui')}}"
+  <input type="submit" value="福井県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.yamanashi')}}"
+  <input type="submit" value="山梨県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.nagano')}}"
+  <input type="submit" value="長野県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.gihu')}}"
+  <input type="submit" value="岐阜県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.sizuoka')}}"
+  <input type="submit" value="静岡県"
     style= "width:200px;height:50px;font-size:20;">  
-  <input type="submit" value="{{__('messages.aiti')}}"
+  <input type="submit" value="愛知県"
     style= "width:200px;height:50px;font-size:20;"></h3>
 
   <hr size="1">
 
   <div class="kinki">
     <div class="kinki2">
-      {{__('messages.kinki_region')}}
+      近畿地方
     </div>
   </div>
 
   <hr size="1">
 
-  <h3><input type="submit" value="{{__('messages.mie')}}" 
+  <h3><input type="submit" value="三重県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.shiga')}}"
+  <input type="submit" value="滋賀県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.kyoto')}}"
+  <input type="submit" value="京都府"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.osaka')}}"
+  <input type="submit" value="大阪府"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.hyogo')}}"
+  <input type="submit" value="兵庫県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.nara')}}"
+  <input type="submit" value="奈良県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.wakayama')}}"
+  <input type="submit" value="和歌山県"
     style= "width:200px;height:50px;font-size:20;"></h3>
   
   <hr size="1">
 
   <div class="tyuugoku">
     <div class="sikoku">
-      {{__('messages.chugoku_sikoku_region')}}
+      中国・四国地方
     </div>
   </div>
 
   <hr size="1">
 
-  <h3><input type="submit" value="{{__('messages.tottori')}}" 
+  <h3><input type="submit" value="鳥取県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.shimane')}}"
+  <input type="submit" value="島根県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.okayama')}}"
+  <input type="submit" value="岡山県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.hiroshima')}}"
+  <input type="submit" value="広島県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.yamagata')}}"
+  <input type="submit" value="山口県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.tokushima')}}"
+  <input type="submit" value="徳島県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.kagawa')}}"
+  <input type="submit" value="香川県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.ehime')}}"
+  <input type="submit" value="愛媛県"
     style= "width:200px;height:50px;font-size:20;">  
-  <input type="submit" value="{{__('messages.kouchi')}}"
+  <input type="submit" value="高知県"
     style= "width:200px;height:50px;font-size:20;"></h3>
 
   <hr size="1">
 
   <div class="kyuusyuu">
     <div class="kyuusyuu2">
-        {{__('messages.kyushu_okinawa_region')}}
+        九州・沖縄地方
     </div>
   </div>
 
   <hr size="1">
       
-  <h3><input type="submit" value="{{__('messages.hukuoka')}}" 
+  <h3><input type="submit" value="福岡県" 
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.saga')}}"
+  <input type="submit" value="佐賀県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.nagasaki')}}"
+  <input type="submit" value="長崎県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.kumamoto')}}"
+  <input type="submit" value="熊本県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.oita')}}"
+  <input type="submit" value="大分県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.miyazaki')}}"
+  <input type="submit" value="宮崎県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.kagoshima')}}"
+  <input type="submit" value="鹿児島県"
     style= "width:200px;height:50px;font-size:20;">
-  <input type="submit" value="{{__('messages.okinawa')}}"
+  <input type="submit" value="沖縄県"
     style= "width:200px;height:50px;font-size:20;"></h3>
 
 @endsection
@@ -207,14 +202,14 @@
       <label class="btn" for="chk"></label>
       <label class="other" for="chk"></label>
       <div class="content">
-        <h2><i class="fas fa-list-ul"></i>{{__('messages.menu')}}</h2>
+        <h2><i class="fas fa-list-ul"></i>メニュー</h2>
         <div class="menu">
           <a href="http://localhost:8000/"><i class="fas fa-microphone-alt">
-          </i>{{__('messages.changelanguage')}}</a>
+          </i>言語を変更する</a>
           <a href="http://localhost:8000/"><i class="fas fa-envelope">
           </i>Q&A</a>
           <a href="http://localhost:8000/"><i class="fas fa-phone">
-          </i>{{__('messages.question')}}</a>
+          </i>お問い合わせ</a>
         </div>
       </div>
     </div>
@@ -225,9 +220,9 @@
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <div class="menyu1">
   <div class="menyu2">
-	  <a href="./syukuhaku">{{__('messages.menu_1')}} 🏨</a></li>
-	  <a class="active" href="./insyoku">{{__('messages.menu_2')}} 🍜</a></li>
-	  <a href="./kankou">{{__('messages.menu_3')}} 🗼</a></li>
-	  <a href="./Free">{{__('messages.menu_4')}} (`･ω･´)b</a></li>
+	  <a href="./syukuhaku">SYUKUHAKU 🏨</a></li>
+	  <a class="active" href="./insyoku">INSYOKU 🍜</a></li>
+	  <a href="./kankou">KANKOU 🗼</a></li>
+	  <a href="./chat">COMMUNITY (`･ω･´)b</a></li>
   </div>
 </div>
