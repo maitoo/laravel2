@@ -17,6 +17,17 @@ Route::group(['middleware'=>'set.locale'], function () {
 Route::get('/',function (){
   return view('welcome');
 });
+//企業別情報
+Route::get('/company/edit','App\Http\Controllers\CompanyController@edit');
+Route::post('/company/edit','App\Http\Controllers\CompanyController@update');
+Route::get('/company/find','App\Http\Controllers\CompanyController@find');
+
+Route::get('/company/keyword','App\Http\Controllers\CompanyController@keyword')->middleware('keyword');
+
+//顧客情報管理
+Route::get('/customer/edit','App\Http\Controllers\CustomerController@edit');
+Route::post('/customer/edit','App\Http\Controllers\CustomerController@update');
+Route::get('/customer/keyword','App\Http\Controllers\CustomerController@keyword')->middleware('keyword');
 
 Route::get('/company', 'App\Http\Controllers\CompanyController@index');
 

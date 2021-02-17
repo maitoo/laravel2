@@ -37,18 +37,14 @@ class InformationRequest extends FormRequest
             'area' => 'required',
             //必須項目
             'store_stype' => 'required',
-            //null可
-            'photo_pass' => 'nullable',
+            //必須項目
+            'photo_pass' => 'required',
             //必須項目
             'store_information' => 'required',
-            //最大文字数30文字
-            'street_address' => 'max:30',
+            //最大文字数100文字、必須項目
+            'street_address' => 'max:100|required',
             //url形式で書かれているか？
             'url' => 'url|nullable',
-            //文字列の値か？
-            'religion' => 'string|nullable',
-            //必須項目
-            'allergies' => 'required',
             //必須項目
             'store_introduction' => 'required',
         ];
@@ -63,11 +59,11 @@ class InformationRequest extends FormRequest
             'area.required' => 'エリアは必須項目です。',
             'store_stype.required' => '店の種類は必須項目です。',
             'store_information.required' => '店情報は必須項目です。',
-            'street_address.max' => '最大文字数は30文字です。',
+            'street_address.max' => '最大文字数は100文字です。',
+            'street_address.required' => 'ご住所は必須項目です。',
             'url.url' => '無効なURLです。',
-            'religion.string' => '文字列で入力して下さい。',
-            'allergies.required' => 'アレルギー情報は必須項目です。',
             'store_introduction.required' => '紹介文は必須項目です。',
+            'photo_pass.required' => '写真は必須項目です。',
         ];
     }
 }

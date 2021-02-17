@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Information;
+use App\Model\Information;;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyaddController extends Controller
 {
@@ -17,7 +18,8 @@ class CompanyaddController extends Controller
 
   public function add(Request $request)
   {
-    return view('company.add');
+    $user_id = Auth::user()->user_id;
+    return view('company.add',compact('user_id'));
   }
   public function create(Request $request)
   {

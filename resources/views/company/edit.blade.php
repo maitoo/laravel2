@@ -6,7 +6,7 @@
 
 @section('content')
 {{--更新情報表示--}}
-  <form action="/information/edit" method="post">
+  <form action="/company/edit" method="post">
   <div class="table">
   <table>
 
@@ -327,24 +327,6 @@
       <option value="観光地">観光地</option>
       </select></td></tr>
 
-{{--アレルギー情報--}}
-      {{--エラーメッセージ--}}
-    @error('allergies')
-      <tr><th class="error">&nbsp; ERROR</th>
-      <td class="error">&nbsp; {{$message}}</td></tr>
-    @enderror
-
-      <tr><th>アレルギー情報:</th><td><input type="text" name="allergies" value="{{$form->allergies}}"></td></tr>
-
-{{--宗教情報--}}
-      {{--エラーメッセージ--}}
-    @error('religion')
-      <tr><th class="error">&nbsp; ERROR</th>
-      <td class="error">&nbsp; {{$message}}</td></tr>
-    @enderror
-
-      <tr><th>宗教情報:</th><td><input type="text" name="religion" value="{{$form->religion}}"></td></tr>
-
 {{--リンク--}}
       {{--エラーメッセージ--}}
     @error('url')
@@ -352,7 +334,7 @@
       <td class="error">&nbsp; {{$message}}</td></tr>
     @enderror
 
-      <tr><th>リンク:</th><td><input type="text" name="url" value="{{$form->url}}"></td></tr>
+      <tr><th>URL:</th><td><input type="text" name="url" value="{{$form->url}}"></td></tr>
 
 {{--住所--}}
       {{--エラーメッセージ--}}
@@ -362,18 +344,6 @@
     @enderror
 
       <tr><th>住所:</th><td><input type="text" name="street_address" value="{{$form->street_address}}"></td></tr>
-
-{{--写真--}}      
-      {{--エラーメッセージ--}}
-    @error('photo_pass')
-      <tr><th class="error">&nbsp; ERROR</th>
-      <td class="error">&nbsp; {{$message}}</td></tr>
-    @enderror
-
-      <tr><th>写真:</th><td><img src="{{ $form->photo_pass}}" width="50" height="40" align="center"></td></tr>
-
-{{--公開、非公開の切り替え--}}
-      <tr><th>公開</th><td><label><input name="flag" type="hidden" value= "0" ><input name="flag" type="checkbox" value="1" class="check">公開する</label></td></tr>
 
 {{--更新情報登録--}}      
       <tr><th></th><td><input type="submit" value="更新" class="button"></td></tr>
