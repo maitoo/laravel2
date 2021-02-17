@@ -42,7 +42,7 @@
         </tr>
         <tr>
           <td  height="300px;" 
-          style="border-top-color: black; color:red; font-size: 70px;" align="left"><div class="gazou"><a href="{{ $item->url}}">
+          style="border-top-color: black; color:red; font-size: 55px;" align="left"><div class="gazou"><a href="{{ $item->url}}">
           {{ $item->store_name}}</td></div>
         </tr>
         <tr>
