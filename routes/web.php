@@ -22,7 +22,7 @@ Route::get('/company/edit','App\Http\Controllers\CompanyController@edit');
 Route::post('/company/edit','App\Http\Controllers\CompanyController@update');
 Route::get('/company/find','App\Http\Controllers\CompanyController@find');
 
-Route::get('/company/keyword','App\Http\Controllers\CompanyController@keyword')->middleware('keyword');
+Route::get('/com/keyword','App\Http\Controllers\CompanyController@keyword')->middleware('keyword');
 
 //顧客情報管理
 Route::get('/customer/edit','App\Http\Controllers\CustomerController@edit');

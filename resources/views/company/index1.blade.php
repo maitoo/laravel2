@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <form action="/company/keyword" method="GET">
+    <form action="/com/keyword" method="GET">
     @csrf
     <input type="text" style= "width:900px;height:50px"; name="keyword" placeholder="       🔍id・メールアドレス等を入力(スペース区切りで複数条件検索可)" value="{{$keyword}}">
     <tr><td><input class="search" type="submit" value="検索"></td></tr><br>
