@@ -69,6 +69,6 @@ class QuestionController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $question->fill($form)->save();
-        return redirect('/user_q');
+        return redirect('/syukuhaku');
     }
 }

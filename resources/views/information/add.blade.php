@@ -126,7 +126,8 @@
     @if (!null == old('area'))
       <option value="{{old('area')}}" hidden> {{old('area')}} </option>
     @else
-      <option value='' hidden> 未選択 </option>
+      
+<option value='' selected="selected" class="msg" hidden>未選択</option>
     @endif
 
 			<option value="札幌" class="Hokkaido">札幌</option>

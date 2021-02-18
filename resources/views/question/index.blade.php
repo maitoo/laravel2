@@ -10,7 +10,7 @@ value="編集画面" class="submit2">
 
 @section('content')
     <table border="1">
-    <tr><th class="a">ユーザーid</th><th>質問内容</th></tr>
+    <tr><th class="a"><th>質問内容</th></tr>
     @foreach ($items as $item)
         <tr>
             <td>{{ $item->user_id}}</td>

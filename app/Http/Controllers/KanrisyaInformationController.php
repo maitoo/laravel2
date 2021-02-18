@@ -17,7 +17,6 @@ class KanrisyaInformationController extends Controller
      {
          $items = Information::all();
          $num = $items->count();
-         $items = Information::simplePaginate(9);
          $keyword = "";
          $flag = "";
          return view('information.index', ['items' => $items, 'keyword' => $keyword, 'num' => $num,'flag' => $flag]);

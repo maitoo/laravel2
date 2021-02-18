@@ -132,7 +132,7 @@ class InformationController extends Controller
             $flag = 1;
         }
  
-        $items = $query->simplePaginate(9);
+        $items = $query->get();
  
         return view('information.index', compact('items', 'keyword', 'num', 'flag'));
     }
