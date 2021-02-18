@@ -5,29 +5,20 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<style>
-    .back{
-    background-image:url(../image/汎用的な矢印のアイコン素材2.png);             
-    background-repeat:  no-repeat;                              
-    padding: 30px 25px 0px 30px;
-    border-radius: 8px;                                   
-    align:left;
-    object-fit: cover;
-    margin: 10px 350px; 
-    background-color: blue;
-    border-color: transparent;                                
-    }
-    .back:hover {
-    backdrop-filter: blur(12px);
-    }
+  <style>
+    .back{background-image:url(../image/汎用的な矢印のアイコン素材2.png);
+    background-repeat:  no-repeat; padding: 30px 25px 0px 30px;
+    border-radius: 8px; align:left; object-fit: cover; margin: 10px 350px; 
+    background-color: blue; border-color: transparent;}
+    .back:hover {backdrop-filter: blur(12px);}
 
-  h1 {font-size: 80px; text-align: center; height: -10px; margin: -80px;}
-  h3 {font-size: 45px; text-align: center; height: -5px; margin: 70px;}
-  span {font-size: 20px; text-align: justify; text-justify: inter-ideograph; margin:500px;}
-  textarea {width: 800px; height: 200px; margin: -100px 350px;}
-  .text1 { margin: 100px 350px;}
+    h1 {font-size: 80px; text-align: center; height: -10px; margin: -80px;}
+    h3 {font-size: 45px; text-align: center; height: -5px; margin: 70px;}
+    span {font-size: 20px; text-align: justify; text-justify: inter-ideograph; margin:500px;}
+    textarea {width: 800px; height: 200px; margin: -100px 350px;}
+    .text1 { margin: 100px 350px;}
 
-  .button {
+    .button {
       display       : inline-block;
       border-radius : 20%;          /* 角丸       */
       font-size     : 18pt;        /* 文字サイズ */
@@ -51,8 +42,8 @@
 
     a { margin: 0 -100px;}
     .url {margin: -460px 1100px;}
-
     .under {text-decoration: underline;}
+    title{}
 </style>
 
 </head>

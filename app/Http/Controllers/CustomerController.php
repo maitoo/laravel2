@@ -41,19 +41,19 @@ class CustomerController extends Controller
     public function questionIndex(Request $request)
     {
         $items = Question::all();
-        return view('user.question', ['items' => $items]);
+        return view('question.question', ['items' => $items]);
     }
     //お問い合わせ入力画面へ
     public function formIndex(Request $request)
     {
-        return view('user.form');
+        return view('question.form');
     }
     //お問い合わせ内容確認画面へ
     public function reformIndex(Request $request)
     {
         $user_id = Auth::user()->user_id;
         $question = $request->question;
-        return view('user.form2', ['question' => $question, 'user_id' => $user_id]);
+        return view('question.form2', ['question' => $question, 'user_id' => $user_id]);
     }
     //顧客情報管理画面へ
     public function index(Request $request)

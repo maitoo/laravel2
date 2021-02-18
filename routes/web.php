@@ -146,6 +146,9 @@ Route::post('information/edit', 'App\Http\Controllers\InformationController@upda
 Route::get('information/del', 'App\Http\Controllers\InformationController@delete');
 Route::post('information/del', 'App\Http\Controllers\InformationController@remove');
 
+Route::get('information/find',
+'App\Http\Controllers\InformationController@find');
+
 Route::get('freemap', 'App\Http\Controllers\MapController@index');
 
 

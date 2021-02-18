@@ -33,7 +33,7 @@
         </tr>
 
         <tr>
-          <td rowspan="10" style="border-top-style: hidden;"><img src="{{ $item->photo_pass}}" width="60" height="50" align="center"></td>
+          <td rowspan="10" style="border-top-style: hidden;"><img src="{{ asset($item->photo_pass)}}" width="60" height="50" align="center"></td>
 
           <td 
           style="border-top-color: black; color:black; border-top-style: hidden; font-size: 20px;" align="center" >

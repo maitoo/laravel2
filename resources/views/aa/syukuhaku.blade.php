@@ -206,9 +206,9 @@
       <div class="content">
         <h2><i class="fas fa-list-ul"></i>メニュー</h2>
         <div class="menu">
-        <a href="http://localhost:8000/"><i class="fas fa-envelope">
+        <a href="user_q"><i class="fas fa-envelope">
           </i>Q&A</a>
-          <a href="http://localhost:8000/"><i class="fas fa-phone">
+          <a href="form"><i class="fas fa-phone">
           </i>お問い合わせ</a>
           <a href="setlocale/ja">日本語
           <a href="setlocale/en">英語
