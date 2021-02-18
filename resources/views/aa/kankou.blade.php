@@ -39,7 +39,7 @@
   <hr size="1">
 
   
-  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./insyokuarea'" 
+  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./kankouarea'" 
     style= "width:200px;height:50px;font-size:20;"></input></h3>
   
 
@@ -224,6 +224,6 @@
 	  <a href="./syukuhaku">SYUKUHAKU 🏨</a>
 	  <a href="./insyoku">INSYOKU 🍜</a>
 	  <a class="active" href="./kankou">KANKOU 🗼</a>
-	  <a href="./chat">FREE (`･ω･´)b</a>
+	  <a href="./chat">COMMUNITY (`･ω･´)b</a>
   </div>
 </div>

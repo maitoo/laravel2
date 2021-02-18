@@ -41,7 +41,7 @@
   <hr size="1">
 
   
-  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./insyokuarea'" 
+  <h3><input type="submit" value="{{__('messages.hokkaido')}}" onclick="location.href='./syukuhakuarea'" 
     style= "width:200px;height:50px;font-size:20;"></input></h3>
   
 

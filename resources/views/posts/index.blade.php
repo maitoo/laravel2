@@ -4,7 +4,7 @@
 
 <div class="title0" font-size="20px">
   <div class="title" font-size="20px">
-    コミュニティ
+    {{__('messages.commu')}}
   </div>
 </div>
 
@@ -13,7 +13,7 @@
     <div class="container mt-4">
     <div class="mb-4">
     <a href="{{ route('posts.create') }}" class="btn btn-primary">
-        投稿を新規作成する
+        {{__('messages.up')}}
     </a>
     </div>
         @foreach ($posts as $post)
@@ -26,17 +26,17 @@
                         {!! nl2br(e(Str::limit($post->body, 200))) !!}
                     </p>
                     <a class="card-link" href="{{ route('posts.show', ['post' => $post]) }}">
-                    続きを読む
+                    {{__('messages.readnext')}}
                     </a>
                 </div>
                 <div class="card-footer">
                     <span class="mr-2">
-                        投稿日時 {{ $post->created_at->format('Y.m.d') }}
+                    {{__('messages.date')}} {{ $post->created_at->format('Y.m.d') }}
                     </span>
 
                     @if ($post->comments->count())
                         <span class="badge badge-primary">
-                            コメント {{ $post->comments->count() }}件
+                            {{__('messages.comment')}} {{ $post->comments->count() }}{{__('messages.case')}} 
                         </span>
                     @endif
                 </div>
@@ -53,19 +53,20 @@
 </head>
 <body>
   <header>
-    <div class="menu-drawer">
+  <div class="menu-drawer">
       <input type="checkbox" id="chk" />
       <label class="btn" for="chk"></label>
       <label class="other" for="chk"></label>
       <div class="content">
         <h2><i class="fas fa-list-ul"></i>メニュー</h2>
         <div class="menu">
-          <a href="http://localhost:8000/"><i class="fas fa-microphone-alt">
-          </i>言語を変更する</a>
-          <a href="http://localhost:8000/"><i class="fas fa-envelope">
+        <a href="http://localhost:8000/"><i class="fas fa-envelope">
           </i>Q&A</a>
           <a href="http://localhost:8000/"><i class="fas fa-phone">
           </i>お問い合わせ</a>
+          <a href="setlocale/ja">日本語
+          <a href="setlocale/en">英語
+          <a href="setlocale/zh">中国語
         </div>
       </div>
     </div>
